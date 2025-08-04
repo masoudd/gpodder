@@ -352,6 +352,7 @@ class gPodderYoutubeDL(download.CustomDownloader):
             'progress_hooks': [reporthook],  # to notify UI
             'writesubtitles': subs,
             'subtitleslangs': ['all'] if subs else [],
+            'subtitlesformat': ['srt', 'best'] if subs else [], # See issue 1788 on github
             'postprocessors': [{'key': 'FFmpegEmbedSubtitle'}] if subs else [],
         }
 
